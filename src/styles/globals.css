@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Base */
+    --background: 210 40% 98%;
+    --foreground: 215 25% 27%;
+
+    /* Primary - Indigo */
+    --primary: 243 75% 59%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Violet */
+    --secondary: 263 70% 58%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Accent - Emerald */
+    --accent: 158 64% 30%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Muted */
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    /* Card */
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 13%;
+
+    /* Border, Input, Ring */
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 243 75% 59%;
+
+    /* Urgency - Rose */
+    --urgency: 350 89% 60%;
+    --urgency-foreground: 0 0% 100%;
+
+    /* Premium - Amber */
+    --premium: 48 96% 89%;
+    --premium-foreground: 26 90% 31%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Base */
+    --background: 222 84% 5%;
+    --foreground: 210 40% 98%;
+
+    /* Primary - Indigo */
+    --primary: 243 75% 59%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Violet */
+    --secondary: 263 70% 58%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Accent - Emerald */
+    --accent: 158 64% 30%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Muted */
+    --muted: 217 33% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    /* Card */
+    --card: 222 84% 5%;
+    --card-foreground: 210 40% 98%;
+
+    /* Border, Input, Ring */
+    --border: 217 33% 18%;
+    --input: 217 33% 18%;
+    --ring: 243 75% 59%;
+
+    /* Urgency - Rose */
+    --urgency: 350 89% 60%;
+    --urgency-foreground: 0 0% 100%;
+
+    /* Premium - Amber */
+    --premium: 26 90% 31%;
+    --premium-foreground: 48 96% 89%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  /* Typography Scale */
+  h1 {
+    @apply text-2xl font-bold tracking-tight md:text-3xl lg:text-4xl;
+  }
+
+  h2 {
+    @apply text-xl font-semibold tracking-tight md:text-2xl;
+  }
+
+  h3 {
+    @apply text-lg font-semibold md:text-xl;
+  }
+
+  /* Body text defaults */
+  p {
+    @apply text-sm text-muted-foreground leading-relaxed;
+  }
+
+  /* Meta text */
+  .meta {
+    @apply text-xs text-muted-foreground;
+  }
+}
+
+@layer components {
+
+  /* Glass-Clean Card */
+  .card-glass {
+    @apply bg-card rounded-xl border border-border shadow-sm transition-shadow duration-200 hover:shadow-md;
+  }
+
+  /* Premium Card */
+  .card-premium {
+    @apply bg-card rounded-xl border-2 border-premium shadow-sm transition-shadow duration-200 hover:shadow-md;
+  }
+
+  /* Touch target size for mobile */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+
+  /* Focus visible ring */
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+  }
+}
+
+@layer utilities {
+
+  /* Scrollbar utilities */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Backdrop blur for navbar */
+  .nav-blur {
+    @apply bg-background/80 backdrop-blur-md;
+  }
+}
